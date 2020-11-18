@@ -143,6 +143,8 @@ module.exports = function svelte(options = {}) {
 		fixed_options[key] = options[key];
 	});
 
+	console.log("Hot plugin options debug", options)
+	
 	if (major_version >= 3) {
 		fixed_options.format = 'esm';
 		fixed_options.sveltePath = options.sveltePath || 'svelte';
@@ -173,8 +175,6 @@ module.exports = function svelte(options = {}) {
 
 	// hot
 	const hotPlugin = options.hot && options.dev && svelteHmr(options.hot);
-
-	console.log("Hot plugin debug", options, options.hot, options.dev, hotPlugin)
 	
 	let writeBlankCss = false;
 
