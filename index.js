@@ -5,14 +5,10 @@ const { createFilter } = require('rollup-pluginutils');
 const { encode, decode } = require('sourcemap-codec');
 const svelteHmr = require('./hmr');
 
+const { resolveSvelteId } = require('./resolve-svelte');
 
 function loadDefaultSvelte() {
-	return {
-		major_version,
-		compile,
-		preprocess,
-		resolveSvelteId,
-	} = require('./resolve-svelte');
+	return { major_version, compile, preprocess } = require('./resolve-svelte');
 }
 
 const pkg_export_errors = new Set();
@@ -133,12 +129,7 @@ const after = (a, b) => function (...args) {
 };
 
 module.exports = function svelte(options = {}) {
-	const {
-		major_version,
-		compile,
-		preprocess,
-		resolveSvelteId,
-	} = options.svelte || loadDefaultSvelte()
+	const { major_version, compile, preprocess } = options.svelte || loadDefaultSvelte()
 	
 	const filter = createFilter(options.include, options.exclude);
 
