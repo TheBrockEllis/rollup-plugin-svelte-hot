@@ -25,6 +25,12 @@ declare class CssWriter {
 
 type CssEmitter = (css: CssWriter) => any;
 
+interface Svelte {
+  compile: any;
+  preprocess: any;
+  major_version: number;
+}
+
 interface Options {
   /**
    * By default, all .svelte and .html files are compiled
