@@ -174,6 +174,8 @@ module.exports = function svelte(options = {}) {
 	// hot
 	const hotPlugin = options.hot && options.dev && svelteHmr(options.hot);
 
+	console.log("Hot plugin debug", options, options.hot, options.dev, hotPlugin)
+	
 	let writeBlankCss = false;
 
 	if (hotPlugin && !options.hot.noDisableCss) {
