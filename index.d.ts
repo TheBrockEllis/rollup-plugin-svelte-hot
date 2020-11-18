@@ -89,6 +89,11 @@ interface Options {
   customElement?: boolean;
 
   /**
+   * Pass in a specific version of Svelte.
+   */
+  svelte?: Svelte;
+  
+  /**
    * let Rollup handle all other warnings normally
    */
   onwarn?: (
