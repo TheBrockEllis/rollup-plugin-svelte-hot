@@ -31,7 +31,7 @@ function capitalize(str) {
 const pluginOptions = {
 	include: true,
 	exclude: true,
-	extensions: true,f
+	extensions: true,
 	emitCss: true,
 	preprocess: true,
 	hot: true,
