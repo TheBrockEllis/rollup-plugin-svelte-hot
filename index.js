@@ -8,6 +8,7 @@ const svelteHmr = require('./hmr');
 const { resolveSvelteId } = require('./resolve-svelte');
 
 function loadDefaultSvelte() {
+	console.log("Inside of the loadDefaultSvelte")
 	return { major_version, compile, preprocess } = require('./resolve-svelte');
 }
 
@@ -30,7 +31,7 @@ function capitalize(str) {
 const pluginOptions = {
 	include: true,
 	exclude: true,
-	extensions: true,
+	extensions: true,f
 	emitCss: true,
 	preprocess: true,
 	hot: true,
